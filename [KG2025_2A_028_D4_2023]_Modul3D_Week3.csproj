@@ -1,0 +1,7 @@
+<Project Sdk="Godot.NET.Sdk/4.6.0">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>[KG2025_2A_028_D4_2023]_Modul3D_Week3</RootNamespace>
+  </PropertyGroup>
+</Project>
