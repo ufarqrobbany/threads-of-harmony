@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponData" load_steps=2 format=3 uid="uid://cmp8cese1e13v"]
+
+[ext_resource type="Script" uid="uid://hj4n3vfnjpx1" path="res://Scripts/Entities/Player/WeaponData.cs" id="1_hwkwg"]
+
+[resource]
+script = ExtResource("1_hwkwg")
+WeaponName = "Kujang"
+AttackBonus = 10.0
+DefenseBonus = 1.0
+HealthBonus = 0.0
+ModelPath = "uid://bte2uy0uvje3o"
+EquippedBoneName = "WeaponAttach"
+metadata/_custom_type_script = "uid://hj4n3vfnjpx1"

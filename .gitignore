@@ -1,3 +1,18 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+extended_editor_settings.tres
+
+# C# / .NET ignores
+bin/
+obj/
+*.csproj.old*
+
+# Mono/Visual Studio/Rider
+.vs/
+.vscode/
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
