@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://bj78rfb5faiqi"]
+
+[ext_resource type="Script" uid="uid://bi2dxnac6iraa" path="res://Scripts/Entities/Player/Player.cs" id="1_7kpwk"]
+[ext_resource type="PackedScene" uid="uid://mfqw8ghwm16x" path="res://Assets/Characters/Player/MCRigged.glb" id="2_qer5h"]
+[ext_resource type="PackedScene" uid="uid://h3mbt7max5s3" path="res://Scenes/Entities/Player/Kujang.tscn" id="3_pmdnf"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qer5h"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pmdnf"]
+height = 3.2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qer5h"]
+height = 1.5
+radius = 2.3
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_7kpwk")
+
+[node name="PlayerMesh" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_qer5h")
+
+[node name="PlayerShape" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_pmdnf")
+
+[node name="PlayerModel" parent="." instance=ExtResource("2_qer5h")]
+transform = Transform3D(-0.04, 0, 3.49691e-09, 0, 0.04, 0, -3.49691e-09, 0, -0.04, 0, 0, 0)
+
+[node name="WeaponAttach" type="BoneAttachment3D" parent="PlayerModel/Rig/Skeleton3D" index="1"]
+transform = Transform3D(-0.688748, -0.678264, -0.256096, -0.256096, -0.102857, 0.961163, -0.678264, 0.727584, -0.102858, -23.3234, 1.98571, -6.97249)
+bone_name = "arm_right_hand"
+bone_idx = 8
+
+[node name="Node3D" type="Node3D" parent="PlayerModel/Rig/Skeleton3D/WeaponAttach"]
+transform = Transform3D(4.88639, -0.300787, -8.71968, -5.27892, -8.05912, -2.68024, -6.94667, 5.91272, -4.09679, -4.75021, 1.14207, -1.21103)
+
+[node name="Kujang" parent="PlayerModel/Rig/Skeleton3D/WeaponAttach/Node3D" instance=ExtResource("3_pmdnf")]
+transform = Transform3D(0.552384, -0.754673, -0.354034, 0.833472, 0.507149, 0.219372, 0.0139932, -0.416255, 0.90914, -0.140421, -0.164972, -0.0349652)
+
+[node name="AttackArea" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 13
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.179605, 0)
+shape = SubResource("CylinderShape3D_qer5h")
+debug_color = Color(0.998399, 0, 0.143026, 0.42)
+
+[editable path="PlayerModel"]

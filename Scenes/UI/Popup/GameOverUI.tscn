@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://du6u2jwsj6exr"]
+
+[ext_resource type="Script" uid="uid://civqao13arx11" path="res://Scripts/UI/Popup/GameOverUI.cs" id="1_8k13b"]
+[ext_resource type="Texture2D" uid="uid://bcpbrp7ocve3a" path="res://Assets/UI/Popup/GameOver/GameOverLabel.png" id="1_r3gqv"]
+[ext_resource type="Texture2D" uid="uid://cdqmx3324c82l" path="res://Assets/UI/Popup/GameOver/ContinueButtonDefault.png" id="2_pwacn"]
+[ext_resource type="Texture2D" uid="uid://dwbvms0jch787" path="res://Assets/UI/Popup/GameOver/ContinueButtonHover.png" id="3_8k13b"]
+[ext_resource type="Texture2D" uid="uid://dkrsvo7qqr6o0" path="res://Assets/UI/Popup/GameOver/ReturnButtonDefault.png" id="4_mwjxt"]
+[ext_resource type="Texture2D" uid="uid://bkkttydxj8ox6" path="res://Assets/UI/Popup/GameOver/ReturnButtonHover.png" id="5_gc6h8"]
+
+[node name="GameOverUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8k13b")
+
+[node name="FadeOverlay" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.862745)
+
+[node name="Container" type="VBoxContainer" parent="FadeOverlay"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="GameOverLabel" type="TextureRect" parent="FadeOverlay/Container"]
+custom_minimum_size = Vector2(398, 123.75)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_r3gqv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Buttons" type="VBoxContainer" parent="FadeOverlay/Container"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="ContinueButton" type="TextureButton" parent="FadeOverlay/Container/Buttons"]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_pwacn")
+texture_hover = ExtResource("3_8k13b")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ReturnButton" type="TextureButton" parent="FadeOverlay/Container/Buttons"]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_mwjxt")
+texture_hover = ExtResource("5_gc6h8")
+ignore_texture_size = true
+stretch_mode = 0

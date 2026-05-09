@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://conmuesmhtq5r"]
+
+[ext_resource type="Script" uid="uid://dpav3qeh1k6hy" path="res://Scripts/Entities/Enemies/Enemy.cs" id="1_rxwfp"]
+[ext_resource type="PackedScene" uid="uid://vgfkbnrac5kd" path="res://Assets/Characters/Enemies/MahapatihBatu.glb" id="2_jobhq"]
+[ext_resource type="PackedScene" uid="uid://bkq7xx5ai8qtn" path="res://Scenes/UI/HUD/EnemyHealthUI.tscn" id="3_y3b53"]
+[ext_resource type="PackedScene" uid="uid://d1aq631hyx2m7" path="res://Scenes/Effects/Explosion.tscn" id="4_m4igm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kcmni"]
+albedo_color = Color(1, 0.222802, 0.0189681, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kcmni"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_154ox"]
+radius = 2.275
+height = 7.892
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xslkb"]
+height = 7.342
+radius = 4.812
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nardh"]
+viewport_path = NodePath("MeshInstance3D/EnemyHealthViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksb14"]
+resource_local_to_scene = true
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_nardh")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_54i7w"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ksb14")
+size = Vector2(3, 0.36)
+orientation = 2
+
+[node name="Enemy" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_rxwfp")
+
+[node name="EnemyMesh" type="MeshInstance3D" parent="."]
+visible = false
+material_override = SubResource("StandardMaterial3D_kcmni")
+mesh = SubResource("CapsuleMesh_kcmni")
+
+[node name="EnemyShape" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_154ox")
+
+[node name="EnemyModel" parent="." instance=ExtResource("2_jobhq")]
+transform = Transform3D(-0.1, 0, -1.50996e-08, 0, 0.1, 0, 1.50996e-08, 0, -0.1, 0.0757509, 0, 0)
+
+[node name="AttackArea" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0872802, 0)
+shape = SubResource("CylinderShape3D_xslkb")
+debug_color = Color(0.998399, 0, 0.143026, 0.42)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.41014, 0)
+mesh = SubResource("PlaneMesh_54i7w")
+
+[node name="EnemyHealthViewport" type="SubViewport" parent="MeshInstance3D"]
+transparent_bg = true
+size = Vector2i(264, 28)
+render_target_update_mode = 4
+
+[node name="EnemyHealthUI" parent="MeshInstance3D/EnemyHealthViewport" instance=ExtResource("3_y3b53")]
+script = null
+
+[node name="Explosion" parent="." instance=ExtResource("4_m4igm")]
+
+[editable path="EnemyModel"]

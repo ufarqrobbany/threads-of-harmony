@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c50aoal6112vd"]
+
+[ext_resource type="Script" uid="uid://drajdps7ajy8y" path="res://Scripts/Camera/PlayerCameraController.cs" id="1_ri2wl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ri2wl"]
+
+[node name="PlayerCameraController" type="SpringArm3D"]
+shape = SubResource("SphereShape3D_ri2wl")
+spring_length = 6.0
+margin = 0.001
+script = ExtResource("1_ri2wl")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 6)
+current = true

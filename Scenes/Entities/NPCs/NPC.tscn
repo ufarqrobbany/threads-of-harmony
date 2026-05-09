@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://de76rqvfmvh4k"]
+
+[ext_resource type="Script" uid="uid://bhbdg7dgbmab" path="res://Scripts/Entities/NPCs/NPC.cs" id="1_7rtx4"]
+[ext_resource type="Script" uid="uid://tq8fnr2xk83a" path="res://Scripts/Entities/NPCs/NPCInteraction.cs" id="2_0en5t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ey8py"]
+albedo_color = Color(0, 0.599283, 0.877626, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7rtx4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0en5t"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7rtx4"]
+radius = 2.5
+
+[node name="NPC" type="CharacterBody3D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_7rtx4")
+
+[node name="NPCMesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_ey8py")
+mesh = SubResource("CapsuleMesh_7rtx4")
+
+[node name="NPCShape" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_0en5t")
+
+[node name="InteractionArea" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("2_0en5t")
+
+[node name="InteractionShape" type="CollisionShape3D" parent="InteractionArea"]
+shape = SubResource("CylinderShape3D_7rtx4")
+debug_color = Color(0.00398101, 0.6513, 5.77569e-07, 0.42)
+
+[connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="OnBodyEntered"]
+[connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="OnBodyExited"]

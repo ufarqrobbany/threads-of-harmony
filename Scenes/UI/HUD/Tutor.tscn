@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfvyx84yr2g0f"]
+
+[ext_resource type="Script" uid="uid://crp81uws28wgp" path="res://Scenes/UI/HUD/Tutor.cs" id="1_xvwlw"]
+[ext_resource type="Texture2D" uid="uid://j7o8twrewlnu" path="res://Assets/UI/Tutor_Zoom.png" id="3_xaxn5"]
+[ext_resource type="Texture2D" uid="uid://cf433jghwomu" path="res://Assets/UI/Tutor_Move.png" id="4_nj4dn"]
+[ext_resource type="Texture2D" uid="uid://o3jxsaimayss" path="res://Assets/UI/Tutor_Jump.png" id="5_m4w8y"]
+[ext_resource type="Texture2D" uid="uid://bf72ovqu5c04l" path="res://Assets/UI/Tutor_Camera.png" id="5_nj4dn"]
+[ext_resource type="Texture2D" uid="uid://4r6l0yy2df2x" path="res://Assets/UI/Tutor_Sprint.png" id="6_0fttb"]
+[ext_resource type="Texture2D" uid="uid://cfi47oil3h0ae" path="res://Assets/UI/Tutor_Attack.png" id="7_kkpb4"]
+
+[node name="Tutor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xvwlw")
+TextureRect1Path = NodePath("TextureRect1")
+TextureRect2Path = NodePath("TextureRect2")
+TextureRect3Path = NodePath("TextureRect3")
+TextureRect4Path = NodePath("TextureRect4")
+TextureRect5Path = NodePath("TextureRect5")
+TextureRect6Path = NodePath("TextureRect6")
+
+[node name="TextureRect1" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 13.0
+offset_right = 598.0
+offset_bottom = 156.0
+texture = ExtResource("5_nj4dn")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 13.0
+offset_right = 598.0
+offset_bottom = 156.0
+texture = ExtResource("3_xaxn5")
+stretch_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 13.0
+offset_right = 558.0
+offset_bottom = 156.0
+texture = ExtResource("4_nj4dn")
+stretch_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 13.0
+offset_right = 534.0
+offset_bottom = 156.0
+texture = ExtResource("5_m4w8y")
+stretch_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 13.0
+offset_right = 598.0
+offset_bottom = 156.0
+texture = ExtResource("6_0fttb")
+stretch_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 13.0
+offset_right = 516.0
+offset_bottom = 156.0
+texture = ExtResource("7_kkpb4")
+stretch_mode = 1

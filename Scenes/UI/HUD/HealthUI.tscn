@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://bloa05d6bjces"]
+
+[ext_resource type="Script" uid="uid://doll47t2v15i2" path="res://Scripts/UI/HUD/HealthUI.cs" id="1_f7pml"]
+[ext_resource type="Texture2D" uid="uid://dv7kbrn81fsft" path="res://Assets/UI/HUD/HealthFull.png" id="2_0dj03"]
+[ext_resource type="Texture2D" uid="uid://dxwxg51dfny26" path="res://Assets/UI/HUD/HealthLow.png" id="3_g2ulp"]
+[ext_resource type="Texture2D" uid="uid://d3fvyidtljsp1" path="res://Assets/UI/HUD/HealthEmpty.png" id="4_gx5xt"]
+
+[node name="HealthUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f7pml")
+normalTexture = ExtResource("2_0dj03")
+lowHealthTexture = ExtResource("3_g2ulp")
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.25, 0.25)
+
+[node name="HealthBar" type="TextureProgressBar" parent="Node2D"]
+offset_left = 1840.0
+offset_top = 2700.0
+offset_right = 3280.0
+offset_bottom = 2780.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+max_value = 10.0
+step = 0.1
+value = 10.0
+texture_under = ExtResource("4_gx5xt")
+texture_progress = ExtResource("2_0dj03")
+texture_progress_offset = Vector2(60, 16)
+
+[node name="HealthText" type="Label" parent="Node2D"]
+offset_left = 1844.0
+offset_top = 2704.0
+offset_right = 3272.0
+offset_bottom = 2787.0
+theme_override_colors/font_color = Color(1, 0.901961, 0.486275, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.686275)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 16
+theme_override_font_sizes/font_size = 50
+text = "CurrentHealth/MaxHealth"
+horizontal_alignment = 1

@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://liemaxmhckgn"]
+
+[ext_resource type="Script" uid="uid://p4xjhty47fk5" path="res://Scripts/UI/NarrationScene.cs" id="1_bihve"]
+
+[sub_resource type="Animation" id="Animation_bihve"]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_q64vn"]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ep1vd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q64vn"]
+_data = {
+&"FadeIn": SubResource("Animation_bihve"),
+&"FadeOut": SubResource("Animation_q64vn"),
+&"RESET": SubResource("Animation_ep1vd")
+}
+
+[node name="Prolog" type="Node2D"]
+
+[node name="NarrationScene" type="CanvasLayer" parent="." node_paths=PackedStringArray("NarrationLabel", "AnimPlayer")]
+script = ExtResource("1_bihve")
+NarrationLabel = NodePath("Label")
+AnimPlayer = NodePath("AnimationPlayer")
+
+[node name="ColorRect" type="ColorRect" parent="NarrationScene"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.145098, 0.145098, 0.145098, 1)
+
+[node name="Label" type="Label" parent="NarrationScene"]
+offset_left = 131.0
+offset_right = 1147.0
+offset_bottom = 714.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 27
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NarrationScene"]
+libraries = {
+&"": SubResource("AnimationLibrary_q64vn")
+}

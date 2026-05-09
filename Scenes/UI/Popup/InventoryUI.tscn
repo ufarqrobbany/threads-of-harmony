@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://q6cxinlxe0s4"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WeaponListContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="EquippedWeaponStats" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WeaponNameLabel" type="Label" parent="Panel/EquippedWeaponStats"]
+layout_mode = 2
+
+[node name="AttackLabel" type="Label" parent="Panel/EquippedWeaponStats"]
+layout_mode = 2
+
+[node name="DefenseLabel" type="Label" parent="Panel/EquippedWeaponStats"]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="Panel/EquippedWeaponStats"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

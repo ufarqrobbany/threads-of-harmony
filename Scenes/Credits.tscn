@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqv7dyc8vuhtw"]
+
+[ext_resource type="Texture2D" uid="uid://b7v5pjwyprpy8" path="res://Assets/UI/Background.png" id="1_i8h6y"]
+[ext_resource type="Script" uid="uid://bllhxslrmucdq" path="res://Scripts/Credits.cs" id="2_iynit"]
+[ext_resource type="Texture2D" uid="uid://cjq3axrpsvu56" path="res://Assets/UI/Popup/Credits/Credits.png" id="3_f64u0"]
+[ext_resource type="Texture2D" uid="uid://mbtgr67hsdto" path="res://Assets/UI/Buttons/BackButtonDefault.png" id="3_iynit"]
+[ext_resource type="Texture2D" uid="uid://dov82edc6uu0u" path="res://Assets/UI/Buttons/BackButtonHover.png" id="4_f64u0"]
+
+[node name="Credits" type="Node2D"]
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Sprite2D" parent="Container"]
+position = Vector2(633, 304)
+scale = Vector2(0.640503, 0.581667)
+texture = ExtResource("1_i8h6y")
+
+[node name="Container2" type="CenterContainer" parent="Container" node_paths=PackedStringArray("BackButton")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 1284.0
+offset_bottom = 726.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_iynit")
+BackButton = NodePath("VBoxContainer/BackButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/Container2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Container/Container2/VBoxContainer"]
+custom_minimum_size = Vector2(1021, 414)
+layout_mode = 2
+texture = ExtResource("3_f64u0")
+expand_mode = 1
+
+[node name="BackButton" type="TextureButton" parent="Container/Container2/VBoxContainer"]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_iynit")
+texture_hover = ExtResource("4_f64u0")
+ignore_texture_size = true
+stretch_mode = 0

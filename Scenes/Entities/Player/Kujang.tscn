@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://h3mbt7max5s3"]
+
+[ext_resource type="PackedScene" uid="uid://bte2uy0uvje3o" path="res://Assets/Weapons/Kujang.glb" id="1_88vt6"]
+
+[node name="Kujang" type="Node3D"]
+
+[node name="Kujang" parent="." instance=ExtResource("1_88vt6")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxs8kf1p1imcv"]
+
+[ext_resource type="Script" uid="uid://bef6f4ubv3t35" path="res://Scripts/UI/Popup/PauseMenu.cs" id="1_hykoa"]
+[ext_resource type="Texture2D" uid="uid://ct88pvshow17a" path="res://Assets/UI/Popup/PauseMenu/PauseMenu.png" id="2_hykoa"]
+[ext_resource type="Texture2D" uid="uid://crwkmj05yuy5f" path="res://Assets/UI/Buttons/ResumeButtonDefault.png" id="3_g00nh"]
+[ext_resource type="Texture2D" uid="uid://b6k47o777riqh" path="res://Assets/UI/Buttons/ResumeButtonHover.png" id="4_hh3lj"]
+[ext_resource type="Texture2D" uid="uid://f8e8vjqfvk31" path="res://Assets/UI/Buttons/ExitMainMenuButtonDefault.png" id="5_1wnnm"]
+[ext_resource type="Texture2D" uid="uid://dxvhk3npquxwj" path="res://Assets/UI/Buttons/ExitMainMenuButtonHover.png" id="6_7qan4"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hykoa")
+
+[node name="FadeOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.537255)
+
+[node name="Container" type="VBoxContainer" parent="FadeOverlay"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="GameOverLabel" type="TextureRect" parent="FadeOverlay/Container"]
+custom_minimum_size = Vector2(513, 440)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_hykoa")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Buttons" type="VBoxContainer" parent="FadeOverlay"]
+layout_mode = 2
+offset_top = 347.0
+offset_right = 1280.0
+offset_bottom = 503.0
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="ResumeButton" type="TextureButton" parent="FadeOverlay/Buttons"]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_g00nh")
+texture_hover = ExtResource("4_hh3lj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ExitButton" type="TextureButton" parent="FadeOverlay/Buttons"]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_1wnnm")
+texture_hover = ExtResource("6_7qan4")
+ignore_texture_size = true
+stretch_mode = 0

@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1s7gfcf1brs1"]
+
+[ext_resource type="Script" uid="uid://bk6fpht71x7t1" path="res://Scripts/Settings.cs" id="1_mjqtt"]
+[ext_resource type="Texture2D" uid="uid://b7v5pjwyprpy8" path="res://Assets/UI/Background.png" id="2_ci1r4"]
+[ext_resource type="Texture2D" uid="uid://ymljel80y5hb" path="res://Assets/UI/Popup/Settings/Settings.png" id="2_w1nw0"]
+[ext_resource type="Texture2D" uid="uid://mbtgr67hsdto" path="res://Assets/UI/Buttons/BackButtonDefault.png" id="3_mjqtt"]
+[ext_resource type="Texture2D" uid="uid://dov82edc6uu0u" path="res://Assets/UI/Buttons/BackButtonHover.png" id="4_ppjuv"]
+
+[node name="Settings" type="Node2D" node_paths=PackedStringArray("BackButton")]
+script = ExtResource("1_mjqtt")
+BackButton = NodePath("Container/Container/VBoxContainer/BackButton")
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Sprite2D" parent="Container"]
+position = Vector2(633, 304)
+scale = Vector2(0.640503, 0.581667)
+texture = ExtResource("2_ci1r4")
+
+[node name="Container" type="CenterContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 1284.0
+offset_bottom = 726.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/Container"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Container/Container/VBoxContainer"]
+custom_minimum_size = Vector2(465, 394)
+layout_mode = 2
+texture = ExtResource("2_w1nw0")
+expand_mode = 1
+
+[node name="BackButton" type="TextureButton" parent="Container/Container/VBoxContainer"]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_mjqtt")
+texture_hover = ExtResource("4_ppjuv")
+ignore_texture_size = true
+stretch_mode = 0

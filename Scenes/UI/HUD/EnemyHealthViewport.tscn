@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://s2ykdcnv0my7"]
+
+[ext_resource type="PackedScene" uid="uid://bkq7xx5ai8qtn" path="res://Scenes/UI/HUD/EnemyHealthUI.tscn" id="1_7rx0r"]
+
+[node name="EnemyHealthViewport" type="SubViewport"]
+
+[node name="EnemyHealthUI" parent="." instance=ExtResource("1_7rx0r")]

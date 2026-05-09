@@ -1,0 +1,120 @@
+[gd_scene load_steps=14 format=3 uid="uid://eeutb43wvdyu"]
+
+[ext_resource type="Script" uid="uid://bjoiqu1e4m1rv" path="res://Scripts/MainMenu.cs" id="1_fh7cp"]
+[ext_resource type="Texture2D" uid="uid://b7v5pjwyprpy8" path="res://Assets/UI/Background.png" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://bkuyiqs2w1kae" path="res://Assets/UI/Logo.png" id="2_rrcx7"]
+[ext_resource type="Texture2D" uid="uid://bxt612xyk4owu" path="res://Assets/UI/Buttons/NewGameButtonDefault.png" id="4_fh7cp"]
+[ext_resource type="Texture2D" uid="uid://bjmdewn7jkc52" path="res://Assets/UI/Buttons/NewGameButtonHover.png" id="5_8e205"]
+[ext_resource type="Texture2D" uid="uid://bdm06v1hduyql" path="res://Assets/UI/Buttons/ContinueButtonDefault.png" id="6_7467j"]
+[ext_resource type="Texture2D" uid="uid://ctsl712bv0dok" path="res://Assets/UI/Buttons/ContinueButtonHover.png" id="7_2x1g0"]
+[ext_resource type="Texture2D" uid="uid://bk5ns13qo14pe" path="res://Assets/UI/Buttons/SettingsButtonDefault.png" id="8_riqfo"]
+[ext_resource type="Texture2D" uid="uid://duhsgyqlr0dcv" path="res://Assets/UI/Buttons/SettingsButtonHover.png" id="9_yxkem"]
+[ext_resource type="Texture2D" uid="uid://bpgbg61wr2g6b" path="res://Assets/UI/Buttons/CreditButtonDefault.png" id="10_7v4os"]
+[ext_resource type="Texture2D" uid="uid://clgb26tjgowap" path="res://Assets/UI/Buttons/CreditButtonHover.png" id="11_pjscj"]
+[ext_resource type="Texture2D" uid="uid://sivai4wfb6ll" path="res://Assets/UI/Buttons/ExitButtonDefault.png" id="12_m7n2d"]
+[ext_resource type="Texture2D" uid="uid://baqmpd51bnydy" path="res://Assets/UI/Buttons/ExitButtonHover.png" id="13_65hh5"]
+
+[node name="MainMenu" type="Node2D" node_paths=PackedStringArray("NewGameButton", "ContinueButton", "SettingsButton", "CreditsButton", "ExitButton")]
+script = ExtResource("1_fh7cp")
+NewGameButton = NodePath("Container/Container/Buttons/NewGameButton")
+ContinueButton = NodePath("Container/Container/Buttons/ContinueButton")
+SettingsButton = NodePath("Container/Container/Buttons/SettingsButton")
+CreditsButton = NodePath("Container/Container/Buttons/CreditsButton")
+ExitButton = NodePath("Container/Container/Buttons/ExitButton")
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Sprite2D" parent="Container"]
+position = Vector2(633, 304)
+scale = Vector2(0.640503, 0.581667)
+texture = ExtResource("1_tt5f1")
+
+[node name="Container" type="Control" parent="Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 1284.0
+offset_bottom = 726.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="Container/Container"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+offset_left = 62.0
+offset_top = 6.0
+offset_right = 570.0
+offset_bottom = 493.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_rrcx7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Buttons" type="VBoxContainer" parent="Container/Container"]
+layout_mode = 2
+offset_left = 895.0
+offset_top = 44.0
+offset_right = 1215.0
+offset_bottom = 775.0
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="NewGameButton" type="TextureButton" parent="Container/Container/Buttons"]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_fh7cp")
+texture_hover = ExtResource("5_8e205")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ContinueButton" type="TextureButton" parent="Container/Container/Buttons"]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_7467j")
+texture_hover = ExtResource("7_2x1g0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SettingsButton" type="TextureButton" parent="Container/Container/Buttons"]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("8_riqfo")
+texture_hover = ExtResource("9_yxkem")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CreditsButton" type="TextureButton" parent="Container/Container/Buttons"]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("10_7v4os")
+texture_hover = ExtResource("11_pjscj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ExitButton" type="TextureButton" parent="Container/Container/Buttons"]
+custom_minimum_size = Vector2(320, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("12_m7n2d")
+texture_hover = ExtResource("13_65hh5")
+ignore_texture_size = true
+stretch_mode = 0

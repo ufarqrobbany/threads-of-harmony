@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0kt0qil44iyl"]
+
+[ext_resource type="PackedScene" uid="uid://dh7o87cvd2tmu" path="res://Assets/KayKits Dungeon/gltf/torchWall.gltf.glb" id="1_qaibf"]
+
+[node name="Light" type="Node3D"]
+
+[node name="torchWall_gltf" parent="." instance=ExtResource("1_qaibf")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="torchWall_gltf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010725, 0.891206, 0.615592)
+light_color = Color(1, 0.482739, 0.256744, 1)
+light_energy = 2.888
+light_size = 0.462
+light_specular = 3.581
+shadow_transmittance_bias = -11.875
+shadow_blur = 0.0
+omni_range = 21.243

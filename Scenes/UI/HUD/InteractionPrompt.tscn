@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddhdfgoj6snmp"]
+
+[ext_resource type="Script" uid="uid://b8ic0wi800wrf" path="res://Scripts/UI/HUD/InteractionPrompt.cs" id="1_qqle0"]
+
+[node name="InteractionPrompt" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qqle0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 700.0
+offset_top = 400.0
+offset_right = 893.0
+offset_bottom = 426.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="LabelKey" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.415686)
+theme_override_font_sizes/font_size = 18
+text = "[F]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelText" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.415686)
+theme_override_font_sizes/font_size = 18
+text = "Interaction Prompt"
+horizontal_alignment = 1
+vertical_alignment = 1
